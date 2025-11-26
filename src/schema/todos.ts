@@ -6,5 +6,6 @@ export const todos = pgTable("todos", {
   userId: uuid("user_id").notNull(),
   title: varchar("title", { length: 200 }).notNull(),
   done: boolean("done").notNull().default(false),
-  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull()
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull()
 });

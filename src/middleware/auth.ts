@@ -9,13 +9,17 @@ declare global {
   }
 }
 
-export async function requireAuth(req: Request, res: Response, next: NextFunction) {
+export async function requireAuth(req: Request, _res: Response, next: NextFunction) {
   const header = req.header("Authorization");
-  if (!header?.startsWith("Bearer ")) return res.status(401).json({ error: "Unauthorized" });
+  if (!header?.startsWith("Bearer ")) {
+    return next(new Error("UnauthorizedError"));
+  }
 
   const token = header.slice(7);
   const { data, error } = await supabaseAdmin.auth.getUser(token);
-  if (error || !data?.user) return res.status(401).json({ error: "Invalid token" });
+  if (error || !data?.user) {
+    return next(new Error("UnauthorizedError"));
+  }
 
   req.user = { id: data.user.id, email: data.user.email };
   next();

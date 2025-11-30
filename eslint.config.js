@@ -23,6 +23,6 @@ export default [
     }
   },
   {
-    ignores: ["node_modules", "dist", "drizzle/migrations"]
+    ignores: ["node_modules", "dist", "drizzle/migrations", "drizzle.config.ts"]
   }
 ];

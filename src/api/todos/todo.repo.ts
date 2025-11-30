@@ -1,6 +1,6 @@
-import { db } from "../config/db.js";
-import { todos } from "../schema/todos.js";
 import { eq, and } from "drizzle-orm";
+import { db } from "../../config/db.js";
+import { todos } from "../../schema/todos.js";
 
 export const TodoRepo = {
   list: (userId: string) => db.select().from(todos).where(eq(todos.userId, userId)),

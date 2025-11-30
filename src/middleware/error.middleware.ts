@@ -16,6 +16,5 @@ export function errorMiddleware(
       return res.status(401).json({ error: "Unauthorized" });
     }
   }
-
   res.status(500).json({ error: "Internal server error" });
 }

@@ -3,7 +3,7 @@ import { env } from "./src/config/env";
 
 export default defineConfig({
     // Specify the PostgreSQL driver
-    schema: './src/schema', // Path to schema file
+    schema: "./src/schema/index.ts", // Path to schema file
     out: './src/drizzle/migrations', // Directory where migration files will be saved
     dialect: 'postgresql',
     dbCredentials: {

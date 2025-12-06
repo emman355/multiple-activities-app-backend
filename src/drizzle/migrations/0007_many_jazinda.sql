@@ -1,0 +1,1 @@
+ALTER TABLE "pokemon_review" ADD COLUMN "user_email" varchar(255) NOT NULL;

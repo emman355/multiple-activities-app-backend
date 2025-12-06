@@ -5,6 +5,7 @@ import cors from 'cors';
 import { errorMiddleware } from './middleware/error.middleware.js';
 import { todoRouter } from './api/todos/todo.routes.js';
 import { foodReviewRouter } from './api/food/foodReview.routes.js';
+import pokemonReviewRouter from './api/pokemon/pokemonReview.routes.js';
 // --- CONFIGURATION ---
 const app = express();
 const port = 3001;
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/todos", todoRouter);
 app.use("/api/food-review", foodReviewRouter);
+app.use("/api/pokemon-review", pokemonReviewRouter)
 
 // Global error handler (must be last)
 app.use(errorMiddleware);

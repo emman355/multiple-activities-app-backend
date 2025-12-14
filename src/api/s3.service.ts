@@ -1,6 +1,6 @@
 import { S3Client } from "@aws-sdk/client-s3";
-import { env } from "../../config/env.js";
-import { supabaseAdmin } from "../../config/supabase.js";
+import { env } from "../config/env.js";
+import { supabaseAdmin } from "../config/supabase.js";
 
 
 export const s3 = new S3Client({

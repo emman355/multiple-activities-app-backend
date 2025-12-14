@@ -57,6 +57,34 @@
       "when": 1764831323287,
       "tag": "0007_many_jazinda",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1765250167416,
+      "tag": "0008_real_carlie_cooper",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1765255694045,
+      "tag": "0009_flaky_earthquake",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1765262797416,
+      "tag": "0010_salty_talon",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1765298801100,
+      "tag": "0011_nosy_zemo",
+      "breakpoints": true
     }
   ]
 }

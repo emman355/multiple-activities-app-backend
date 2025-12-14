@@ -1,0 +1,1 @@
+ALTER TABLE "drive_lite_photos" ADD COLUMN "file_size" integer NOT NULL;

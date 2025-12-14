@@ -29,7 +29,6 @@ export const PokemonReviewController = {
 
       res.status(201).json(item);
     } catch (err) {
-      console.log(err)
       next(err);
     }
   },

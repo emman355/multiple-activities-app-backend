@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { FoodReview } from "./foodReview.repo.js";
-import { deleteFile, uploadFile } from "./s3.service.js";
+import { deleteFile, uploadFile } from "../s3.service.js";
 import multer from "multer";
 
 // configure multer (memory storage so we can pass buffer to Supabase S3)
@@ -11,7 +11,6 @@ export const FoodController = {
     try {
       const items = await FoodReview.getReviews(
         req.user!.id,
-        (req.query.sortBy as "name" | "date") || "date"
       );
       res.json(items);
     } catch (err) {
@@ -140,8 +139,10 @@ export const FoodController = {
           const objectPath = parts.slice(6).join("/");
           await deleteFile(bucket, objectPath);
         } catch (storageErr) {
-          console.error("Failed to delete photo from bucket:", storageErr);
-          // continue anyway — DB record is already gone
+           res.status(500).json({
+            message: "Failed to delete photo from bucket:", storageErr,
+            error: storageErr instanceof Error ? storageErr.message : String(storageErr),
+          });
         }
       }
 

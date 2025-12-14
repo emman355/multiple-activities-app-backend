@@ -4,10 +4,9 @@ import { db } from "../../config/db.js";
 
 export const FoodReview = {
   // 📸 Photos
-  getReviews: (userId: string, sortBy: "name" | "date" = "date") =>
+  getReviews: (userId: string) =>
     db.select().from(foodReview)
-      .where(eq(foodReview.userId, userId))
-      .orderBy(sortBy === "name" ? foodReview.photoName : foodReview.updatedAt),
+      .where(eq(foodReview.userId, userId)),
   
    // 👇 NEW: fetch single review by ID and user
   getReviewById: async (id: string, userId: string) => {

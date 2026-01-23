@@ -2,3 +2,4 @@ export * from "./todos.js";
 export * from "./foodReview.js";
 export * from "./pokemonReview.js";
 export * from "./gDriveLite.js"
+export * from "./notes.js";

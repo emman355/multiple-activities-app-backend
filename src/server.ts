@@ -7,6 +7,7 @@ import { todoRouter } from './api/todos/todo.routes.js';
 import { foodReviewRouter } from './api/food/foodReview.routes.js';
 import pokemonReviewRouter from './api/pokemon/pokemonReview.routes.js';
 import { driveLiteRouter } from './api/drive-lite/driveLite.routes.js';
+import { notesRouter } from './api/notes/notes.routes.js';
 // --- CONFIGURATION ---
 const app = express();
 const port = 3001;
@@ -18,6 +19,7 @@ app.use("/api/todos", todoRouter);
 app.use("/api/food-review", foodReviewRouter);
 app.use("/api/pokemon-review", pokemonReviewRouter)
 app.use("/api/drive-lite", driveLiteRouter)
+app.use("/api/notes", notesRouter);
 
 // Global error handler (must be last)
 app.use(errorMiddleware);

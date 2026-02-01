@@ -9,5 +9,5 @@ notesRouter.use(requireAuth);
 notesRouter.get("/", NotesController.list);
 notesRouter.get("/:id", NotesController.getById);
 notesRouter.post("/", NotesController.create);
-notesRouter.patch("/:id", NotesController.update);
+notesRouter.put("/:id", NotesController.update);
 notesRouter.delete("/:id", NotesController.remove);

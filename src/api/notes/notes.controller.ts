@@ -39,7 +39,7 @@ export const NotesController = {
         req.user!.id,
         req.body.title,
         req.body.content,
-        req.body.tag
+        req.body.category
       );
       res.status(201).json(item);
     } catch (err) {
@@ -49,6 +49,7 @@ export const NotesController = {
 
   // PUT /notes/:id
   update: async (req: Request, res: Response, next: NextFunction) => {
+    console.log("Update request:", req.params.id, req.user, req.body);
     try {
       const [item] = await NotesRepo.update(
         req.params.id,

@@ -9,6 +9,7 @@ export const PokemonReview = {
     return await db
       .select()
       .from(pokemonReview)
+      .where(eq(pokemonReview.userId, userId))
       .orderBy(
         sortBy === "name" ? asc(pokemonReview.pokemonName) : desc(pokemonReview.uploadDate)
       );

@@ -19,18 +19,18 @@ export const NotesRepo = {
     userId: string,
     title: string,
     content: unknown,
-    tag?: string
+    category?: string
   ) =>
     db
       .insert(notes)
-      .values({ userId, title, content, tag })
+      .values({ userId, title, content, category })
       .returning(),
 
   // Update a note (only if it belongs to the user)
   update: (
     id: string,
     userId: string,
-    patch: Partial<{ title: string; content: unknown; tag: string }>
+    patch: Partial<{ title: string; content: unknown; category: string }>
   ) =>
     db
       .update(notes)

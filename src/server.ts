@@ -10,7 +10,7 @@ import { driveLiteRouter } from './api/drive-lite/driveLite.routes.js';
 import { notesRouter } from './api/notes/notes.routes.js';
 // --- CONFIGURATION ---
 const app = express();
-const port = 3001;
+const port = 5001;
 
 // --- MIDDLEWARE ---
 app.use(cors());
